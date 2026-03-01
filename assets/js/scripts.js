@@ -50,6 +50,15 @@ function validateForm() {
     // Pista: Usa getElementById('apellidoPaterno')
     
     // Tu código aquí...
+    const apellidoPaterno = document.getElementById('apellidoPaterno');
+    const valorApellidoPaterno = apellidoPaterno.value.trim();
+    
+    if (valorApellidoPaterno === '' || valorApellidoPaterno.length < 2) {
+        apellidoPaterno.classList.add('no-valid');
+        isValid = false;
+    } else {
+        apellidoPaterno.classList.remove('no-valid');
+    }
     
     
     // ==========================================
@@ -58,23 +67,45 @@ function validateForm() {
     // Requisitos: No vacío, mínimo 2 caracteres
     
     // Tu código aquí...
+    const apellidoMaterno = document.getElementById('apellidoMaterno');
+    const valorApellidoMaterno = apellidoMaterno.value.trim();
     
+    if (valorApellidoMaterno === '' || valorApellidoMaterno.length < 2) {
+        apellidoMaterno.classList.add('no-valid');
+        isValid = false;
+    } else {
+        apellidoMaterno.classList.remove('no-valid');
+    }
     
     // ==========================================
     // TODO: Validar Cédula
     // ==========================================
-    // Requisitos: Exactamente 10 dígitos numéricos
-    // Pista: Usa /^\d{10}$/.test(valor) para validar
+    const cedula = document.getElementById('cedula');
+    const valorCedula = cedula.value.trim();
     
-    // Tu código aquí...
+    if (!/^\d{10}$/.test(valorCedula)) {
+        cedula.classList.add('no-valid');
+        isValid = false;
+    } else {
+        cedula.classList.remove('no-valid');
+    }
     
     
     // ==========================================
-    // TODO: Validar Motivo
+    // Validar Motivo
     // ==========================================
     // Requisitos: No vacío, mínimo 10 caracteres
     
     // Tu código aquí...
+    const motivo = document.getElementById('motivo');
+    const valorMotivo = motivo.value.trim();
+    
+    if (valorMotivo === '' || valorMotivo.length < 10) {
+        motivo.classList.add('no-valid');
+        isValid = false;
+    } else {
+        motivo.classList.remove('no-valid');
+    }
     
     
     // ==========================================
@@ -84,7 +115,14 @@ function validateForm() {
     // Pista: Verifica que select.value !== ''
     
     // Tu código aquí...
+    const tipoCuenta = document.getElementById('tipoCuenta');
     
+    if (tipoCuenta.value === '') {
+        tipoCuenta.classList.add('no-valid');
+        isValid = false;
+    } else {
+        tipoCuenta.classList.remove('no-valid');
+    }
     
     // ==========================================
     // TODO: Validar Calle
@@ -92,22 +130,43 @@ function validateForm() {
     // Requisitos: No vacío, mínimo 3 caracteres
     
     // Tu código aquí...
+    const calle = document.getElementById('calle');
+    const valorCalle = calle.value.trim();
+    
+    if (valorCalle === '' || valorCalle.length < 3) {
+        calle.classList.add('no-valid');
+        isValid = false;
+    } else {
+        calle.classList.remove('no-valid');
+    }
     
     
     // ==========================================
     // TODO: Validar Número
     // ==========================================
-    // Requisitos: No vacío
+    const numero = document.getElementById('numero');
+    const valorNumero = numero.value.trim();
     
-    // Tu código aquí...
+    if (valorNumero === '') {
+        numero.classList.add('no-valid');
+        isValid = false;
+    } else {
+        numero.classList.remove('no-valid');
+    }
     
     
     // ==========================================
     // TODO: Validar Intersección
     // ==========================================
-    // Requisitos: No vacío, mínimo 3 caracteres
+    const interseccion = document.getElementById('interseccion');
+    const valorInterseccion = interseccion.value.trim();
     
-    // Tu código aquí...
+    if (valorInterseccion === '' || valorInterseccion.length < 3) {
+        interseccion.classList.add('no-valid');
+        isValid = false;
+    } else {
+        interseccion.classList.remove('no-valid');
+    }
     
     
     // Retornar el resultado final de la validación
